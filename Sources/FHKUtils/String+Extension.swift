@@ -48,6 +48,14 @@ public extension String {
         let format = localized(table: table, bundle: bundle, comment: comment)
         return String(format: format, arguments: arguments)
     }
+    
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
+
+    public mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
 }
 
 
