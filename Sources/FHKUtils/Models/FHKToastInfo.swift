@@ -1,5 +1,5 @@
 //
-//  ToastInfo.swift
+//  FHKToastInfo.swift
 //  FHKUtils
 //
 //  Created by Fredy Leon on 2/3/26.
@@ -13,7 +13,7 @@ public enum ToastType {
     case notification
 }
 
-public class ToastInfo {
+public class FHKToastInfo {
     public var type: ToastType
     public var message: String
     public var hasIcon: Bool
