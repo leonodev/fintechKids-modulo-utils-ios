@@ -12,8 +12,11 @@ public extension Double {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         
+        formatter.usesGroupingSeparator = true
         formatter.groupingSeparator = "."
         formatter.decimalSeparator = ","
+        
+        formatter.groupingSize = 3
         
         if showDecimals {
             formatter.minimumFractionDigits = 2
@@ -23,6 +26,7 @@ public extension Double {
             formatter.maximumFractionDigits = 0
         }
         
-        return formatter.string(from: NSNumber(value: self)) ?? "\(self)"
+        let number = NSNumber(value: self)
+        return formatter.string(from: number) ?? "\(self)"
     }
 }
