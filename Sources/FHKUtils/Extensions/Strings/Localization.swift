@@ -45,7 +45,8 @@ public extension String {
         bundle: Bundle = .main,
         comment: String = ""
     ) -> String {
-        let format = localized(table: table, bundle: bundle, comment: comment)
+        //let format = localized(table: table, bundle: bundle, comment: comment)
+        let format = bundle.localizedString(forKey: self, value: self, table: table)
         return String(format: format, arguments: arguments)
     }
     
