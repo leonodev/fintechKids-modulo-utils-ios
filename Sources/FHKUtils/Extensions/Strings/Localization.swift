@@ -18,7 +18,7 @@ public extension String {
     ///   - bundle: The bundle to search for the table (defaults to .main).
     ///   - comment: A comment for translators (defaults to an empty string).
     /// - Returns: The localized string.
-    func localized(
+    public func localized(
         table: String = "Localizable",
         bundle: Bundle = .main,
         comment: String = ""
@@ -39,14 +39,14 @@ public extension String {
     ///   - bundle: The bundle to search for the table (defaults to .main).
     ///   - comment: A comment for translators (defaults to an empty string).
     /// - Returns: The localized string with arguments substituted.
-    func localized(
+    public func localized(
         _ arguments: CVarArg...,
         table: String = "Localizable",
         bundle: Bundle = .main,
         comment: String = ""
     ) -> String {
         //let format = localized(table: table, bundle: bundle, comment: comment)
-        let format = bundle.localizedString(forKey: self, value: self, table: table)
+        let format: String = self.localized(table: table, bundle: bundle, comment: comment)
         return String(format: format, arguments: arguments)
     }
     
